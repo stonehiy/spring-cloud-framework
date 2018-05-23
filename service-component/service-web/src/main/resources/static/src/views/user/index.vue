@@ -21,7 +21,7 @@
 			</el-table-column>
 			<el-table-column prop="enabled" label="禁用状态">
 				  <template slot-scope="scope">
-					<span v-if="scope.row.enabled">true</span>    
+					<span v-if="scope.row.enabled">true</span>
 					<span v-else> false</span>
 				</template>
 			</el-table-column>
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-	import { getUserFindAll } from '@/api/user'
+//	import { getUserFindAll } from '@/api/user'
 	export default {
 		data() {
 			return {
@@ -59,7 +59,7 @@
 				pageSize: 10,
 				param: {
 					clientId:'',
-					
+
 				},
 				tableData: [],
 
@@ -71,10 +71,10 @@
 		},
 		methods: {
 			initData() {
-				getUserFindAll(this.curr, this.pageSize,this.param).then(response => {
-					this.tableData = response.list;
-					this.total = response.total;
-				})
+//				getUserFindAll(this.curr, this.pageSize,this.param).then(response => {
+//					this.tableData = response.list;
+//					this.total = response.total;
+//				})
 			},
 			handleSizeChange(val) {
 				console.log(`每页 ${val} 条`);
@@ -85,15 +85,15 @@
 				console.log(`当前页: ${val}`);
 			},
 			onSubmit(){
-				
+
 			},
 			handleEdit(){
-				
+
 			},
 			handleDelete(){
-				
+
 			},
-			
+
 		}
 	}
 </script>

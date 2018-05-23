@@ -1,5 +1,5 @@
 import { login, logout } from '@/api/login'
-import { getInfo } from '@/api/user'
+// import { getInfo } from '@/api/user'
 import { getToken, setToken, removeToken, getNavkey, setNavkey } from '@/utils/auth'
 const _import = require('@/router/_import_' + process.env.NODE_ENV)
 const user = {
@@ -68,29 +68,29 @@ const user = {
 			state
 		}) {
 			return new Promise((resolve, reject) => {
-				getInfo().then(response => {
-					console.log("user info ", response)
-					commit('SET_NAME', response.username);
-					const navMenusData = response.navMenuList;
-					if(getNavkey() == undefined) {
-						if(navMenusData && navMenusData.length != 0)
-							commit('SET_MENUS', navMenusData[0].children);
-							commit('SET_NAVKEY', navMenusData[0].key)
-							setNavkey(navMenusData[0].key)
-
-					} else {
-						navMenusData.forEach((item) => {
-							if(item.key == getNavkey()) {
-								commit('SET_MENUS', item.children);
-							}
-
-						})
-					}
-					commit('SET_NAV_MENUS', navMenusData);
-					resolve(response)
-				}).catch(error => {
-					reject(error)
-				})
+				// getInfo().then(response => {
+				// 	console.log("user info ", response)
+				// 	commit('SET_NAME', response.username);
+				// 	const navMenusData = response.navMenuList;
+				// 	if(getNavkey() == undefined) {
+				// 		if(navMenusData && navMenusData.length != 0)
+				// 			commit('SET_MENUS', navMenusData[0].children);
+				// 			commit('SET_NAVKEY', navMenusData[0].key)
+				// 			setNavkey(navMenusData[0].key)
+                //
+				// 	} else {
+				// 		navMenusData.forEach((item) => {
+				// 			if(item.key == getNavkey()) {
+				// 				commit('SET_MENUS', item.children);
+				// 			}
+                //
+				// 		})
+				// 	}
+				// 	commit('SET_NAV_MENUS', navMenusData);
+				// 	resolve(response)
+				// }).catch(error => {
+				// 	reject(error)
+				// })
 			})
 		},
 

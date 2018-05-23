@@ -2,7 +2,7 @@
 	<div class="gdf-panel">
 		<!--查询区域 -->
 		  <el-button type="primary" @click="openDialogMain()">增加</el-button>
-		
+
 		<el-tree :data="menuData" :props="defaultProps" node-key="id" default-expand-all :expand-on-click-node="false" :render-content="renderContent">
 		</el-tree>
 
@@ -39,7 +39,7 @@
 				<el-button type="primary" @click="handleSubmit">确 定</el-button>
 			</div>
 		</el-dialog>
-		
+
 		<el-dialog title="编辑菜单信息" :visible.sync="dialogVisibleEdit">
 			<el-form :model="item">
 				<el-form-item label="名称" label-width="100px">
@@ -57,11 +57,11 @@
 				<el-button type="primary" @click="handleEdit">确 定</el-button>
 			</div>
 		</el-dialog>
-		
+
 	</div>
 </template>
 <script>
-	import { getMenuFindAll,menuSave,menuUpdate } from '@/api/user'
+//	import { getMenuFindAll,menuSave,menuUpdate } from '@/api/user'
 	import { Message, MessageBox } from 'element-ui'
 	let id = 1000;
 
@@ -84,7 +84,7 @@
 				},
 				dialogVisibleMain:false ,
 				dialogVisible:false ,
-				dialogVisibleEdit :false 
+				dialogVisibleEdit :false
 			}
 		},
 		mounted() {
@@ -92,10 +92,10 @@
 		},
 		methods: {
 			initData() {
-				getMenuFindAll().then(response => {
-					console.log(response)
-					this.menuData = response;
-				})
+//				getMenuFindAll().then(response => {
+//					console.log(response)
+//					this.menuData = response;
+//				})
 			},
 
 			append(data) {
@@ -147,7 +147,7 @@
 				this.item.pid = '';
 				this.item.key = '';
 				this.item.icon = '';
-				
+
 			},
 			closeDialog(){
 				this.dialogVisibleMain = false;
@@ -155,27 +155,27 @@
 				this.dialogVisibleEdit=false;
 			},
 			handleSubmit() {
-				menuSave(this.item).then(response => {
-					  Message({
-						        message: response,
-						        type: 'success',
-						        duration: 5 * 1000
-     						 })
-					this.initData();
-					this.closeDialog();
-				})
+//				menuSave(this.item).then(response => {
+//					  Message({
+//						        message: response,
+//						        type: 'success',
+//						        duration: 5 * 1000
+//     						 })
+//					this.initData();
+//					this.closeDialog();
+//				})
 			},
 			handleEdit() {
-				menuUpdate(this.item).then(response => {
-
-					  Message({
-						        message: response,
-						        type: 'success',
-						        duration: 5 * 1000
-     						 })
-					this.initData();
-					this.closeDialog();
-				})
+//				menuUpdate(this.item).then(response => {
+//
+//					  Message({
+//						        message: response,
+//						        type: 'success',
+//						        duration: 5 * 1000
+//     						 })
+//					this.initData();
+//					this.closeDialog();
+//				})
 			},
 			renderContent(h, {
 				node,
