@@ -21,7 +21,7 @@ public class QuartzService {
     ITestFeginService testFeginService;
     @Scheduled(cron = "0/5 * * * * ? ")
     public void timerToNow(){
-        testFeginService.test();
+//        testFeginService.test();
         System.out.println("now time:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
     }
 }
