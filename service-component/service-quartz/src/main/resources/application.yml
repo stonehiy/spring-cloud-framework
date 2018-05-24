@@ -30,3 +30,13 @@ management:
   security:
     enabled: false
 
+cola:
+  swagger2:
+    enable: true
+    base-package: com.cloud.zhuwj
+    title : Cola-Cloud
+    description: Cola cloud Restful API docs
+    termsOfServiceUrl : http://localhost:4000
+    version: 1.0
+    apiName: Authorization
+    apiKeyName: Authorization

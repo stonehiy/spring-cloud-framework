@@ -17,6 +17,10 @@ zuul:
        path: /user/**
        sensitiveHeaders:
        serviceId: service-user
+    quartz:
+       path: /quartz/**
+       sensitiveHeaders:
+       serviceId: service-quartz
   add-proxy-headers: true
   host:
     connect-timeout-millis: 10000

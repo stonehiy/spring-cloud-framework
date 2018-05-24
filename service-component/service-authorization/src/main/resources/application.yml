@@ -40,3 +40,14 @@ security:
       client-secret: webapp
       access-token-uri: http://localhost:9020/oauth/access_token
       user-authorizationUri: http://localhost:9020/oauth/authorize
+
+cola:
+  swagger2:
+    enable: true
+    base-package: com.cloud.zhuwj.authorization
+    title : Cola-Cloud
+    description: Cola cloud Restful API docs
+    termsOfServiceUrl : http://localhost:4000
+    version: 1.0
+    apiName: Authorization
+    apiKeyName: Authorization

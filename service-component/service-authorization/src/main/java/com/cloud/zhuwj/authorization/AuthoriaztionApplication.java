@@ -7,6 +7,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * @author zhuwj
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * @Description:  授权服务启动入口
  * @date 2018/1/21.
  */
+@EnableWebMvc
 @Configuration
 @EnableEurekaClient
 @EnableFeignClients

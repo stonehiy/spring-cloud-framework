@@ -18,3 +18,13 @@ endpoints:
 
 
 
+cola:
+  swagger2:
+    enable: true
+    base-package:
+    title : Cola-Cloud
+    description: Cola cloud Restful API docs
+    termsOfServiceUrl : http://localhost:4000
+    version: 1.0
+    apiName: Authorization
+    apiKeyName: Authorization
