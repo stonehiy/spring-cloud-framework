@@ -1,35 +1,45 @@
 import request from '@/utils/request'
-//	处理核心业务模块的api 前缀为网关定义前缀
-const BASE_PREFIX='/authorization';
-//登入接口
-export function login(username, password) {
-  return request({
-    url: BASE_PREFIX+'/login',
-    method: 'post',
-    data: {
-      username,
-      password,
-      
-    }
-  })
-}
+//	处理用户业务模块的api 前缀为网关定义前缀
+const BASE_PREFIX='/user';
 
-//退出登入接口 暂时只坐前端退出
-export function logout(accessToken) {
+
+//获取用户信息
+export function getInfo() {
   return request({
-    url: BASE_PREFIX+'/logouting',
+    url: BASE_PREFIX+'/findInfo',
     method: 'get',
-    params:{
-    	accessToken
-    }
+    params: { }
   })
 }
-
-//获取客户端信息列表
-export function getClientFindAll(curr,pageSize,param) {
+//获取用户信息列表
+export function getUserFindAll(curr,pageSize,param) {
   return request({
-    url: BASE_PREFIX+'/client/findAll/'+curr+'/'+pageSize,
+    url: BASE_PREFIX+'/user/findAll/'+curr+'/'+pageSize,
     method: 'get',
     params:param
+  })
+}
+//获取菜单信息列表
+export function getMenuFindAll() {
+  return request({
+    url: BASE_PREFIX+'/menu/findAll',
+    method: 'get',
+  })
+}
+//菜单保存接口
+export function menuSave(menu) {
+  return request({
+    url: BASE_PREFIX+'/menu/save',
+    method: 'post',
+    data: menu
+  })
+}
+
+//菜单编辑接口
+export function menuUpdate(menu) {
+  return request({
+    url: BASE_PREFIX+'/menu/update',
+    method: 'post',
+    data: menu
   })
 }

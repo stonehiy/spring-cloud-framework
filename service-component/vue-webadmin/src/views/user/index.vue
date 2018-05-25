@@ -48,7 +48,7 @@
 </template>
 
 <script>
-//	import { getUserFindAll } from '@/api/user'
+	import { getUserFindAll } from '@/api/user'
 	export default {
 		data() {
 			return {
@@ -71,10 +71,10 @@
 		},
 		methods: {
 			initData() {
-//				getUserFindAll(this.curr, this.pageSize,this.param).then(response => {
-//					this.tableData = response.list;
-//					this.total = response.total;
-//				})
+				getUserFindAll(this.curr, this.pageSize,this.param).then(response => {
+					this.tableData = response.list;
+					this.total = response.total;
+				})
 			},
 			handleSizeChange(val) {
 				console.log(`每页 ${val} 条`);

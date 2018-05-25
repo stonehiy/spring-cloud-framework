@@ -61,7 +61,7 @@
 	</div>
 </template>
 <script>
-//	import { getMenuFindAll,menuSave,menuUpdate } from '@/api/user'
+	import { getMenuFindAll,menuSave,menuUpdate } from '@/api/user'
 	import { Message, MessageBox } from 'element-ui'
 	let id = 1000;
 
@@ -92,10 +92,10 @@
 		},
 		methods: {
 			initData() {
-//				getMenuFindAll().then(response => {
-//					console.log(response)
-//					this.menuData = response;
-//				})
+				getMenuFindAll().then(response => {
+					console.log(response)
+					this.menuData = response;
+				})
 			},
 
 			append(data) {
@@ -155,27 +155,27 @@
 				this.dialogVisibleEdit=false;
 			},
 			handleSubmit() {
-//				menuSave(this.item).then(response => {
-//					  Message({
-//						        message: response,
-//						        type: 'success',
-//						        duration: 5 * 1000
-//     						 })
-//					this.initData();
-//					this.closeDialog();
-//				})
+				menuSave(this.item).then(response => {
+					  Message({
+						        message: response,
+						        type: 'success',
+						        duration: 5 * 1000
+     						 })
+					this.initData();
+					this.closeDialog();
+				})
 			},
 			handleEdit() {
-//				menuUpdate(this.item).then(response => {
-//
-//					  Message({
-//						        message: response,
-//						        type: 'success',
-//						        duration: 5 * 1000
-//     						 })
-//					this.initData();
-//					this.closeDialog();
-//				})
+				menuUpdate(this.item).then(response => {
+
+					  Message({
+						        message: response,
+						        type: 'success',
+						        duration: 5 * 1000
+     						 })
+					this.initData();
+					this.closeDialog();
+				})
 			},
 			renderContent(h, {
 				node,
