@@ -17,6 +17,10 @@ endpoints:
     enabled: true
 
 
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
 
 cola:
   swagger2:
